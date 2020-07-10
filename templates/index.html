@@ -1,0 +1,100 @@
+{% extends "base.html" %} {% block content %}
+<div class="center">
+
+    <!-- For recording -->
+    <div class="center" id="controls">
+  	 <button id="recordButton">Record</button>
+  	 <button id="pauseButton" disabled>Pause</button>
+  	 <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div class="center" id="formats"></div>
+  	<ol class="center" id="recordingsList"></ol>
+  	
+    <form   id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label center ">
+            Select Voice
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".mp3, .wav, .jpg, .jpeg" class="label1">
+    </form>
+
+        <div class="center pre">
+            <button type="button" class="center tn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="maleYoung">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Young Male</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a young male. <br>Young: 0-20 years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/youndMale.jpg') }}">
+            </div>
+            
+        </div>
+    </h3>
+    <h3 id="femaleYoung">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Young Female</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a young female. <br>Young: 0-20 years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/youngFemale.jpeg') }}">
+            </div>
+            
+        </div>
+    </h3>
+    <h3 id="maleAdult">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Adult Male</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a adult male. <br>Adult: 20-50 years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/https___cdn.cnn.com_cnnnext_dam_assets_200605104706-cristiano-ronaldo-tease.jpg') }}">
+            </div>
+            
+        </div>
+    </h3>
+    <h3 id="femaleAdult">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Adult Female</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a adult fmale. <br>Adult: 20-50 years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/adultFemale.jpg') }}">
+            </div>
+            
+        </div>
+    </h3>
+    <h3 id="maleSenior">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Senoir Male</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a senior male. <br>Senior: 50-above years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/seniorMale.jpg') }}">
+            </div>
+            
+        </div>
+    </h3>
+    <h3 id="femaleSenior">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Young Male</h2>
+                <p class="d-none  d-sm-block  ">The Voice is of a senior female. <br>Senior: 50-above years of age</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="{{ url_for('static', filename='img/seniorFemale.jpg') }}">
+            </div>
+            
+        </div>
+    </h3>
+
+</div>
+
+{% endblock %}
